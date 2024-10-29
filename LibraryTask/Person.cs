@@ -1,4 +1,4 @@
-﻿namespace LibraryManagementTask;
+﻿namespace LibraryTask;
 
 public abstract class Person
 {

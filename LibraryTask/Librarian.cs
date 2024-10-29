@@ -1,7 +1,6 @@
-﻿using LibraryTask;
+﻿
 using System.Text;
-
-namespace LibraryManagementTask;
+namespace LibraryTask;
 
 public class Librarian : Person
 {
@@ -46,9 +45,9 @@ class Book : LibraryItem
     public BookGenre Genre { get; set; }
     public override void DisplayInfo()
     {
-        Console.WriteLine($"Kitabimiz {Genre} Janrinda yazilmisdir.");
         Console.WriteLine($"Kitabin Adi :{Title}");
         Console.WriteLine($"Nesr olundugu il: {PublicationYear}");
+        Console.WriteLine($"Kitabimiz {Genre} Janrinda yazilmisdir.");
     }
 }
 class Magazine : LibraryItem

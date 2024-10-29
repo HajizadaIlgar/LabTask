@@ -1,14 +1,22 @@
-﻿namespace LibraryManagementTask;
+﻿namespace LibraryTask;
 
 internal class Program
 {
     static void Main(string[] args)
     {
         Book book = new Book();
-        Console.WriteLine(book.Genre);
+        book.Title = "Dede Qorqud";
+        Console.WriteLine("""----------------- --- -------------------""");
+        book.PublicationYear = 1762;
+        book.Genre = (BookGenre)2;
+        book.DisplayInfo();
 
-        book.PublicationYear = 24;
-        Console.WriteLine(book.CalculateAge());
+        Console.WriteLine($"Kitab hazirki gunden {book.CalculateAge()} il evvel nesr olunub");
+        LibraryLocation libraryLocation = new LibraryLocation();
+        libraryLocation.Self = 5;
+        libraryLocation.Aisle = 2;
+        Console.WriteLine($"Kitab {libraryLocation.Aisle}ci koridordaki {libraryLocation.Self}ci reffde yerlesir");
+        Console.WriteLine("""----------------- --- -------------------""");
 
     }
 }
