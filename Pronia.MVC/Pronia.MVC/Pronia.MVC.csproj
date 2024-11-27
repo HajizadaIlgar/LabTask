@@ -23,4 +23,18 @@
     <ProjectReference Include="..\Pronia.BL\Pronia.BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\admin\assets\fonts\.DS_Store" />
+    <None Include="wwwroot\admin\assets\fonts\Roboto\.DS_Store" />
+    <None Include="wwwroot\admin\assets\images\.DS_Store" />
+    <None Include="wwwroot\admin\assets\images\auth\.DS_Store" />
+    <None Include="wwwroot\admin\assets\images\faces\.DS_Store" />
+    <None Include="wwwroot\admin\assets\js\.DS_Store" />
+    <None Include="wwwroot\admin\assets\vendors\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\imgs\" />
+  </ItemGroup>
+
 </Project>

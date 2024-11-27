@@ -10,5 +10,5 @@ public class SliderItemVM
     public string Title { get; set; }
     public string ShortDescription { get; set; }
     [Required]
-    public string ImgPath { get; set; }
+    public ICollection<FileInfo> Image { get; set; }
 }
