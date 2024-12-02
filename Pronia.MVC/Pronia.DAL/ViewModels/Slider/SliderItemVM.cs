@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Pronia.DAL.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pronia.DAL.ViewModels.Slider;
 
-public class SliderItemVM
+public class SliderItemVM : BaseEntity
 {
     [MaxLength(64), Required]
     public int Offer { get; set; }

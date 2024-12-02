@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL.Contexts;
+using Pronia.DAL.ViewModels.Slider;
 
 namespace Pronia.MVC.Areas.Admin.Controllers;
 [Area("Admin")]
@@ -14,5 +15,9 @@ public class SliderController(ProniaDBContext _context) : Controller
     {
         return View();
     }
-
+    [HttpPost]
+    public async Task<IActionResult> Create(SliderItemVM model)
+    {
+        if (!ModelState.IsValid) { return View(model); }
+    }
 }

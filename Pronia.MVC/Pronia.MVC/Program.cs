@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-string? connectionStr = builder.Configuration.GetConnectionString("MyHomePc");
+string? connectionStr = builder.Configuration.GetConnectionString("OtherConnection");
 
 builder.Services.AddDbContext<ProniaDBContext>(opt =>
 {

@@ -13,10 +13,25 @@
                 <input class="form-control" asp-for="Title">
                 <span class="text-danger" asp-validation-for="Title"></span>
             </div>
+            <div class="col">
+                <label asp-for="Offer"></label>
+                <input class="form-control" asp-for="Offer">
+                <span class="text-danger" asp-validation-for="Offer"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="ShortDescription"></label>
                 <textarea class="form-control" asp-for="ShortDescription"></textarea>
                 <span class="text-danger" asp-validation-for="ShortDescription"></span>
+            </div>
+            <div class="col">
+                <label asp-for="CreatedDate"></label>
+                <input class="form-control" asp-for="CreatedDate">
+                <span class="text-danger" asp-validation-for="CreatedDate"></span>
+            </div>
+            <div class="col">
+                <label asp-for="LastModifiedDate"></label>
+                <input class="form-control" asp-for="LastModifiedDate">
+                <span class="text-danger" asp-validation-for="LastModifiedDate"></span>
             </div>
             <div class="form-row">
                 <div class="col">
@@ -27,9 +42,9 @@
             </div>
             <div class="form-row">
                 <div class="col">
-                    <label asp-for="Offer"></label>
-                    <input class="form-control" asp-for="Offer">
-                    <span class="text-danger" asp-validation-for="Offer"></span>
+                    <label asp-for="IsDeleted"></label>
+                    <input class="form-control" asp-for="IsDeleted">
+                    <span class="text-danger" asp-validation-for="IsDeleted"></span>
                 </div>
             </div>
            
