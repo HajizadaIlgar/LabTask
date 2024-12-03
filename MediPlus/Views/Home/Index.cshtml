@@ -2,8 +2,7 @@
 	ViewData["Title"] = "Home Page";
 	Layout = "_Layout";
 }
-@model List<Slider>
-
+@model HomeItemVM
 <!-- Preloader -->
         <div class="preloader">
             <div class="loader">
@@ -49,6 +48,9 @@
 								<li><a href="#">Doctors</a></li>
 								<li><a href="#">Contact</a></li>
 								<li><a href="#">FAQ</a></li>
+								<li>
+									<a href="http://localhost:5282/Admin"><i>Admin</i></a>
+								</li>
 							</ul>
 							<!-- End Contact -->
 						</div>
@@ -123,7 +125,7 @@
 		<!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
-					@foreach (var item in Model)
+					@foreach (var item in Model.slideritem)
 						{
 							
 							<!-- Start Single Slider -->
@@ -481,60 +483,19 @@
 					</div>
 				</div>
 				<div class="row">
+
+				@foreach (var item in Model.servicesitem)
+						{	
 					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-prescription"></i>
-							<h4><a href="service-details.html">General Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-tooth"></i>
-							<h4><a href="service-details.html">Teeth Whitening</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-heart-alt"></i>
-							<h4><a href="service-details.html">Heart Surgery</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-listening"></i>
-							<h4><a href="service-details.html">Ear Treatment</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-eye-alt"></i>
-							<h4><a href="service-details.html">Vision Problems</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Start Single Service -->
-						<div class="single-service">
-							<i class="icofont icofont-blood"></i>
-							<h4><a href="service-details.html">Blood Transfusion</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>	
-						</div>
-						<!-- End Single Service -->
-					</div>
+								<!-- Start Single Service -->
+								<div class="single-service" style="word-wrap:break-word;white-space:normal">
+									<i class="icofont icofont-coconut"></i>
+									<h4><a href="#">@item.Title</a></h4>
+									<p>@item.Description</p>
+								</div>
+								<!-- End Single Service -->
+					</div>					
+						}
 				</div>
 			</div>
 		</section>

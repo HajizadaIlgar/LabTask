@@ -76,5 +76,6 @@ namespace MediPlus.Areas.Admin.Controllers
 			}
 			return RedirectToAction(nameof(Index));
 		}
+
 	}
 }
