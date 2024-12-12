@@ -1,0 +1,62 @@
+﻿@using GameStoreMVC.Models
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Game>
+
+<style>
+    #bttn{
+        color:aliceblue;
+        background-color:brown;
+    }
+    #bttn:hover{
+        background-color:burlywood;
+    }
+</style>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Sliders</h6>
+        <a class="btn btn-primary" asp-controller="Game" asp-action="Create">Yarat</a>
+@*         <a id="bttn" class="btn btn-group-sm" href="http://localhost:5276/">Bax</a>
+ *@    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Game Name</th>
+                        <th>Image</th>
+                        <th>CostPrice</th> 
+                        <th>SellPrice</th>
+                        <th>Discount</th>
+                        <th>Game Id</th>
+                        <th style="text-align:center" colspan="3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td><img src="~/gamephotos/@item.ImageUrl" width="70" /></td>
+                            <td>@item.GameName</td>
+                            <td>@item.CostPrice</td>
+                            <td>@item.SellPrice</td>
+                            <td>@item.Discount</td>
+                            <td>@item.GameId</td>
+                            <td><a class="btn btn-success" asp-controller="Game" asp-action="Update" asp-route-id="@item.Id">Dəyiş</a></td>
+                            <td><a class="btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@item.Id">Sil</a></td>
+                            @{
+                                string ButtonSituation = !item.IsDeleted ? "Gizlet" : "Goster";
+                                string ColorSituation = !item.IsDeleted ? "btn btn-warning" : "btn btn-secondary";
+                            }
+                            <td><a class=@ColorSituation asp-controller="Game" asp-action="Toggle" asp-route-id="@item.Id">@ButtonSituation</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

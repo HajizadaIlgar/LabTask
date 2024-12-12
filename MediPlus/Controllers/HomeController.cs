@@ -5,16 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediPlus.Controllers
 {
-	public class HomeController(MediplusDbContext _context) : Controller
-	{
-		public async Task<IActionResult> Index()
-		{
-			HomeItemVM vm = new HomeItemVM();
-			vm.slideritem = await _context.Sliders.ToListAsync();
-			vm.servicesitem = await _context.Services.ToListAsync();
+    public class HomeController(MediplusDbContext _context) : Controller
+    {
+        public async Task<IActionResult> Index()
+        {
+            HomeItemVM vm = new HomeItemVM();
+            vm.slideritem = await _context.Sliders.ToListAsync();
+            vm.servicesitem = await _context.Services.ToListAsync();
+            return View(vm);
+        }
 
-			return View(vm);
-		}
-
-	}
+    }
 }

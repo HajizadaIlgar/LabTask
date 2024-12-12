@@ -4,9 +4,11 @@ namespace MediPlus.ViewModels;
 
 public class ServiceVM
 {
-	public int Id { get; set; }
-	[MaxLength(64), Required]
-	public string Title { get; set; } = null!;
-	public string Description { get; set; } = null!;
-	public string? Icon { get; set; }
+    public int Id { get; set; }
+    [MaxLength(64), Required]
+    public string Title { get; set; } = null!;
+    public string Description { get; set; } = null!;
+    public string? Icon { get; set; }
+    public int? DepartmentId { get; set; }
+    public string? DepartmentName { get; set; }
 }
