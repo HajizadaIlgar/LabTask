@@ -48,13 +48,7 @@ namespace GameStoreMVC.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        public async Task<IActionResult> ProductDetails(int? id, GameVM vm)
-        {
-            if (id is null) return BadRequest();
-            var data = await _context.Games.Where(x => x.Id == id).Select(x => x.ImageUrl).FirstOrDefaultAsync();
 
-            if (data is null) return NotFound();
-            return View(data);
-        }
+
     }
 }

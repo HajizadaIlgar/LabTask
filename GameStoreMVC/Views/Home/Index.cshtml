@@ -98,13 +98,20 @@
                         <div class="col-lg-3 col-md-6" >
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="product-details.html"><img src="~/gamephotos/@item.ImageUrl" alt=""></a>
-                                    <span class="price"><em>$@(item.SellPrice * item.Discount / 100)</em>@item.SellPrice</span>
+                                    <a asp-asp-controller="Home" asp-action="ProductDetails"><img src="~/gamephotos/@item.ImageUrl" alt=""></a>
+                                    @if (item.Discount>0)
+                                    {
+                                        <span class="price"><em>@item.SellPrice</em>@(item.SellPrice-item.SellPrice*item.Discount/100)</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price">@item.SellPrice</span>
+                                    }
                                 </div>
                                 <div class="down-content">
                                     <span class="category">Action</span>
                                     <h4>@item.GameName</h4>
-                                    <a asp-action="ProductDetail" asp-route-id="@item.Id"><i class="fa fa-shopping-bag"></i></a>
+                                    <a asp-action="ProductDetails" asp-route-id="@item.Id"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                         </div>

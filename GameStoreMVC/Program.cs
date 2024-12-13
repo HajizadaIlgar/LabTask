@@ -1,4 +1,6 @@
 using GameStoreMVC.DataAccess;
+using GameStoreMVC.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStoreMVC
@@ -17,6 +19,18 @@ namespace GameStoreMVC
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("class"));
             });
+            builder.Services.AddIdentity<User, IdentityRole>(opt =>
+            {
+                opt.User.RequireUniqueEmail = false;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 5;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireDigit = false;
+                opt.Lockout.MaxFailedAccessAttempts = 5;
+                //opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(100);
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<GameDbContext>();
+
             var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -32,6 +46,22 @@ namespace GameStoreMVC
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "register",
+                pattern: "register", new
+                {
+                    Controller = "Account",
+                    Action = "Register"
+                });
+
+            app.MapControllerRoute(
+           name: "login",
+           pattern: "login", new
+           {
+               Controller = "Account",
+               Action = "Login",
+           });
 
             app.MapControllerRoute(
             name: "areas",
